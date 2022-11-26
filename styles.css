@@ -33,13 +33,15 @@ form {
   padding: 25px;
 }
 
-.title {
+.title, .title__plan{
   font-family: 'Dosis', sans-serif;
   display: flex;
   justify-content: center;
   align-content: center;
   margin-bottom: 15px;
 }
+
+
 
 .inputForm {
   border: none;
