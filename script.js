@@ -1,6 +1,12 @@
-(()=>{
 
+    
+//CREACION DE MODULOS
+//usando el export e import de archivos.js al archivo principal
 //para utilizar escuChador de eventos, necesitamos: el tipo de evento, elemento que recibirá este evento y la accion que pasará cuando el evento sea disparado (formulario)
+
+
+import checkComplete from "./Components/checkComplete.js";
+import deleteIcon from "./Components/deleteIcon.js";
 
 const btn = document.querySelector("[data-form-btn]");
 
@@ -30,14 +36,14 @@ const createTask = (evento)=>{
 
     taskContent.appendChild(titleTask); //agregando elemento hijo
     
-    const content = `  
-   <i class="fas fa-trash-alt trashIcon icon"></i>`; //usando templeate strings para actualizar la cardlist pos0
+  //usando templeate strings para actualizar la cardlist pos0
 
    //agregando elemento
    //task.innerHTML = content; //asignamos el cod. html
      task.appendChild(taskContent);
 
    //agregando elemento hijo
+   task.appendChild(deleteIcon());
    list.appendChild(task);
   
 }
@@ -50,21 +56,6 @@ const createTask = (evento)=>{
     evento.preventDefault();*/
 
 
-    const checkComplete =()=>{
-        const i = document.createElement("i");
-        i.classList.add("far","fa-check-square", "icon");
-        i.addEventListener('click', completeTask);
-        return i;
-    }
 
 
-    //dinamicamente utilizamos toggle para validar si la clase, existe o no.
-    const completeTask = (event)=>{
-        const element = event.target;
-        element.classList.toggle("fas");
-        element.classList.toggle('completeIcon');
-        element.classList.toggle("far");
-
-    };
-})();
 
